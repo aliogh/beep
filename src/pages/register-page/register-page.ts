@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RegisterPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { AngularFireAuthModule } from 'angularfire2/auth';
 @IonicPage()
 @Component({
   selector: 'page-register-page',
