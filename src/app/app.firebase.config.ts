@@ -1,8 +1,8 @@
 export const FIREBASE_CONFIG = {
-    apiKey: "AIzaSyA8XF7YrEmd-p9TRelzU4P2ZpBpPVvyl3I",
-    authDomain: "marni-todo-app.firebaseapp.com",
-    databaseURL: "https://marni-todo-app.firebaseio.com",
-    projectId: "marni-todo-app",
-    storageBucket: "marni-todo-app.appspot.com",
-    messagingSenderId: "662986103623"
+    apiKey: "AIzaSyBYKtysv4BbmviJkXG-0O2svp4TgcDRcPM",
+    authDomain: "todo-app-1370e.firebaseapp.com",
+    databaseURL: "https://todo-app-1370e.firebaseio.com",
+    projectId: "todo-app-1370e",
+    storageBucket: "todo-app-1370e.appspot.com",
+    messagingSenderId: "645237593165"
   }
