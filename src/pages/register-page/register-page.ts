@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 @IonicPage()
 @Component({
   selector: 'page-register-page',
