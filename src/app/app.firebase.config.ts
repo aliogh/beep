@@ -5,4 +5,4 @@ export const FIREBASE_CONFIG = {
     projectId: "todo-app-1370e",
     storageBucket: "todo-app-1370e.appspot.com",
     messagingSenderId: "645237593165"
-  }
+  };
