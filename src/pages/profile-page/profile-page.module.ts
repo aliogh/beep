@@ -8,6 +8,7 @@ import { ProfilePage } from './profile-page';
   ],
   imports: [
     IonicPageModule.forChild(ProfilePage),
+    ComponentsModule
   ],
   exports: [
     ProfilePage
