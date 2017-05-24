@@ -38,7 +38,5 @@ export class LoginFormComponent {
   navigateToRegisterPage() {
     this.navCtrl.push('RegisterPage');
   }
-  // navigateToPage(pageName: string) {
-  //   pageName === 'TabsPage' ? this.navCtrl.setRoot(pageName) : this.navCtrl.push(pageName);
-  // }
+
 }

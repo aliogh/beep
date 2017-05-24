@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,8 +34,7 @@ import { FormsModule } from '@angular/forms';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
-    DataService,
-    FormsModule
+    DataService
   ]
 })
 export class AppModule {}
