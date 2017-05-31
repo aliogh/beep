@@ -10,10 +10,10 @@ import { Profile } from '../../models/profile/profile.interface';
 export class ProfileSearchComponent {
 
   query: string;
+
   profileList: Profile[];
 
   constructor (private data: DataService) {
-
   }
 
   searchUser(query: string) {

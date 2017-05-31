@@ -7,20 +7,19 @@ import "rxjs/add/operator/take";
 @Injectable()
 export class DataService {
 
-  profileObject: FirebaseObjectObservable<Profile>;
-  profileList: FirebaseListObservable<Profile>;
+  profileObject: FirebaseObjectObservable<Profile>
+  profileList: FirebaseListObservable<Profile>
 
   constructor(private database: AngularFireDatabase) {
   }
 
   searchUser(firstName: string) {
-    const query = this.database.list('/profiles/', {
+    const query = this.database.list('/profiles', {
       query: {
-        // orderByChild: 'firstName',
+        orderByChild: 'firstName',
         equalTo: firstName
       }
     })
-
     return query.take(1);
   }
 

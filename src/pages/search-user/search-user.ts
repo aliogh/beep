@@ -3,8 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-search-user-page',
-  templateUrl: 'search-user-page.html',
+  selector: 'page-search-user',
+  templateUrl: 'search-user.html',
 })
 export class SearchUserPage {
 

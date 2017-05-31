@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { SearchUserPage } from './search-user-page';
+import { SearchUserPage } from './search-user';
 import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
