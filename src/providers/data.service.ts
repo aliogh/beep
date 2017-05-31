@@ -38,6 +38,5 @@ export class DataService {
       console.error(e);
       return false;
     }
-
   }
 }

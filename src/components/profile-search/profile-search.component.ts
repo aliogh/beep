@@ -11,7 +11,7 @@ export class ProfileSearchComponent {
 
   query: string;
 
-  profileList: Profile[];
+  profileList: Profile[]
 
   constructor (private data: DataService) {
   }
