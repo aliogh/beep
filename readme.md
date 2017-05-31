@@ -21,6 +21,9 @@ cd into project
 ```
 $ cd <project name>
 ```
+create your own firebase app at firebase.google.com. Click 'add firebase to your web app' from the dashboard of your new app. Create a file at src/app/app.firebase.config.ts and add this to it:
+export const FIREBASE_CONFIG = <your config object from the firebase code>;
+
 start ionic server:
 ```
 $ ionic serve
