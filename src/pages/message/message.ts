@@ -4,16 +4,17 @@ import { Profile } from '../../models/profile/profile.interface';
 
 @IonicPage()
 @Component({
-  selector: 'page-search-user',
-  templateUrl: 'search-user.html',
+  selector: 'page-message',
+  templateUrl: 'message.html',
 })
-export class SearchUserPage {
+export class Message {
+  selectedProfile: Profile
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
-  openChat(profile: Profile) {
-    this.navCtrl.push('Message', { profile })
+  ionViewWillLoad() {
+    this.selectedProfile = this.navParams.get('profile');
   }
+
 }
