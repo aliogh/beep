@@ -1,5 +1,5 @@
-<ion-searchbar [(ngModel)]="query"></ion-searchbar>
-<button ion-button (click)="searchUser(query)">Search</button>
+<ion-searchbar [(ngModel)]="query" (ionInput)="searchUser(query)"></ion-searchbar>
+<!-- <button ion-button (click)="searchUser(query)">Search</button> -->
 
 
 <ion-list *ngIf="profileList?.length > 0">

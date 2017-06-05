@@ -17,9 +17,13 @@ export class ProfileSearchComponent {
   }
 
   searchUser(query: string) {
-    this.data.searchUser(query).subscribe(profiles => {
-      console.log(profiles);
-      this.profileList = profiles;
-    })
+    const trimmedQuery = query.trim();
+
+    if(trimmedQuery === query) {
+      this.data.searchUser(query).subscribe(profiles => {
+        console.log(profiles);
+        this.profileList = profiles;
+      })
+    }
   }
 }
