@@ -14,6 +14,6 @@ export class SearchUserPage {
 
 
   openChat(profile: Profile) {
-    this.navCtrl.push('Message', { profile })
+    this.navCtrl.push('MessagePage', { profile })
   }
 }
