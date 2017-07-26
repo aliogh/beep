@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ChatService } from '../../providers/chat.service';
+import { Observable } from 'rxjs/Observable';
+import { Channel } from '../../models/channel/channel.interface';
 
 @IonicPage()
 @Component({
@@ -9,7 +11,13 @@ import { ChatService } from '../../providers/chat.service';
 })
 export class ChannelsPage {
 
+  channelList: Observable<Channel[]>
   constructor(private chat: ChatService, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewWillLoad () {
+    //get channels
+    this.getChannels();
   }
 
   showAddChannelDialog() {
@@ -33,4 +41,7 @@ export class ChannelsPage {
     }).present();
   }
 
+  getChannels(){
+    this.channelList = this.chat.getChannelListRef();
+  }
 }
