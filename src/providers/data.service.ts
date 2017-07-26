@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
 import { User } from 'firebase/app';
-import { Profile } from '../models/profile/profile.interface';
 import "rxjs/add/operator/take";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/mergeMap";
+
+
+import { Profile } from '../models/profile/profile.interface';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class DataService {
@@ -10,7 +15,7 @@ export class DataService {
   profileObject: FirebaseObjectObservable<Profile>
   profileList: FirebaseListObservable<Profile>
 
-  constructor(private database: AngularFireDatabase) {
+  constructor(private authService: AuthService, private database: AngularFireDatabase) {
   }
 
   searchUser(firstName: string) {
@@ -21,6 +26,13 @@ export class DataService {
       }
     })
     return query.take(1);
+  }
+
+  getAuthenticatedUserProfile() {
+    return this.authService.getAuthenticatedUser()
+      .map(user => user.uid)
+      .mergeMap(authId => this.database.object(`profiles/${authId}`))
+      .take(1)
   }
 
   getProfile(user: User){

@@ -28,14 +28,11 @@ export class ProfileViewComponent implements OnInit{
 
   ngOnInit() {
     this.loader.present();
-    this.auth.getAuthenticatedUser().subscribe(auth => {
-      this.authUser = auth;
-
-      this.data.getProfile(this.authUser).subscribe(profile => {
-        this.userProfile = <Profile>profile.val();
-        this.existingProfile.emit(this.userProfile);
-        this.loader.dismiss();
-      })
+    
+    this.data.getAuthenticatedUserProfile().subscribe(profile => {
+      this.userProfile = profile;
+      this.existingProfile.emit(this.userProfile);
+      this.loader.dismiss();
     })
   }
 }
