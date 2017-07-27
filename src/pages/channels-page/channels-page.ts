@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { ChatService } from '../../providers/chat.service';
 import { Observable } from 'rxjs/Observable';
 import { Channel } from '../../models/channel/channel.interface';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -11,7 +12,8 @@ import { Channel } from '../../models/channel/channel.interface';
 })
 export class ChannelsPage {
 
-  channelList: Observable<Channel[]>
+  channelList: FirebaseListObservable<Channel[]>
+  
   constructor(private chat: ChatService, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -19,7 +21,9 @@ export class ChannelsPage {
     //get channels
     this.getChannels();
   }
-
+  selectChannel(channel: Channel) {
+    this.navCtrl.push('ChannelChat', { channel });
+  }
   showAddChannelDialog() {
     this.alertCtrl.create({
       title: 'Channel Name',

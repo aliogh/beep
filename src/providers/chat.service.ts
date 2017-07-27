@@ -15,12 +15,8 @@ export class ChatService {
   getChannelListRef(): FirebaseListObservable<Channel> {
     return this.database.list(`channel-names`);
   }
+
+  getChannelChatRef(channelKey: string) {
+    return this.database.list(`channels/${channelKey}`);
+  }
 }
-
-
-// db will  look: key-> room name
-//-Kewjejejwk4324 (key)
-  //-name: 'Ionic'
-//-Kewjfdjkwer3213
-  //-name: 'Angular'
-//will allow us to go to channels/Angular/messages to retrieve all messages for that room
