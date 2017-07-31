@@ -54,7 +54,7 @@ export class DataService {
   }
 
   setUserOnline(profile: Profile) {
-    const ref = database().ref(`online-users/${profile.key}`);
+    const ref = database().ref(`online-users/${profile.$key}`);
 
     try {
       ref.update({ ...profile });
