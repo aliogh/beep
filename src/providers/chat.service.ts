@@ -2,7 +2,7 @@
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs/Observable";
-// import "rxjs/add/operator/mergeMap";
+ import "rxjs/add/operator/mergeMap";
 import 'rxjs/add/observable/forkJoin';
 import 'rxjs/add/operator/first';
 
@@ -47,6 +47,24 @@ export class ChatService {
           (...vals: Message[]) => {
             console.log(vals);
             return vals;
+          }
+        )
+      })
+  }
+
+  getLastMessagesForUser(): Observable<Message[]> {
+    return this.auth.getAuthenticatedUser()
+      .map(auth => auth.uid)
+      .mergeMap(authId => this.database.list(`/last-messages/${authId}`))
+      .mergeMap(messageIds => {
+        return Observable.forkJoin(
+          messageIds.map(message => {
+            return this.database.object(`/messages/${message.key}`)
+              .first()
+          }),
+          (...values) => {
+            console.log(values);
+            return values;
           }
         )
       })

@@ -10,7 +10,7 @@ export class ChatMessage {
   @Input() chatMessage: Message
 
   @Input() userId: string;
-
+  
   constructor(){
 
   }
